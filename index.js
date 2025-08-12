@@ -102,6 +102,53 @@ window.addEventListener("click", e => {
 	}
 });
 
+//swipe gestures handling
+
+let touchStartX = null;
+let touchEndX = null;
+
+const frame = document.querySelector('.frame');
+
+frame.addEventListener('touchstart', function (e) {
+    if (e.touches.length === 1) {
+        touchStartX = e.touches[0].clientX;
+        touchEndX = null;
+    }
+}, { passive: true });
+
+frame.addEventListener('touchmove', function (e) {
+    if (e.touches.length === 1) {
+        touchEndX = e.touches[0].clientX;
+    }
+}, { passive: true });
+
+frame.addEventListener('touchend', function (e) {
+    if (touchStartX !== null && touchEndX !== null) {
+        const deltaX = touchEndX - touchStartX;
+        if (Math.abs(deltaX) > 50) { 
+            if (deltaX < 0) {
+                if (currentIndex === imagesLength - 1) {
+                    currentIndex = 0;
+                } else {
+                    currentIndex++;
+                }
+                updateTapePosition();
+                updateDotFill();
+            } else {
+                if (currentIndex === 0) {
+                    currentIndex = imagesLength - 1;
+                } else {
+                    currentIndex--;
+                }
+                updateTapePosition();
+                updateDotFill();
+            }
+        }
+    }
+    touchStartX = null;
+    touchEndX = null;
+});
+
 // init
 updateTapePosition();
 updateDotFill();
