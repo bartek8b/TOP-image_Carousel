@@ -8,58 +8,56 @@ Assgnment from [The Odin Project](https://www.theodinproject.com)'s lesson [Dyna
 
 ### How to adjust
 
+### How to adjust
+
 1. **Adjust HTML**
 
    Set images
 
-   ```bash
-    <div class="tape">
-        <!-- To be hardcoded -->
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <!-- End of To be hardcoded -->
-    </div>
+   ```html
+   <div class="tape">
+       <!-- To be hardcoded -->
+       <img src="" alt="">
+       <img src="" alt="">
+       <img src="" alt="">
+       <img src="" alt="">
+       <img src="" alt="">
+       <!-- End of To be hardcoded -->
+   </div>
    ```
 
    Set dots (starting index = 0)
 
-   ```bash
-    <div class="dots-box">
-        <!-- To be hardcoded -->
-        <button class="dot" data-index="0"></button>
-        <button class="dot" data-index="1"></button>
-        <button class="dot" data-index="2"></button>
-        <button class="dot" data-index="3"></button>
-        <button class="dot" data-index="4"></button>
-        <!-- End of To be hardcoded -->
-    </div>
+   ```html
+   <div class="dots-box">
+       <!-- To be hardcoded -->
+       <button class="dot" data-index="0"></button>
+       <button class="dot" data-index="1"></button>
+       <button class="dot" data-index="2"></button>
+       <button class="dot" data-index="3"></button>
+       <button class="dot" data-index="4"></button>
+       <!-- End of To be hardcoded -->
+   </div>
    ```
 
 2. **Adjust CSS**
 
    Set colors and frame dimensions
 
-   ```bash
-    :root {
-   	--main-color: blueviolet;
-   	--background-color: lightgrey;
-   	--shadow-color: black;
+   ```css
+   :root {
+       --main-color: blueviolet;
+       --background-color: lightgrey;
+       --shadow-color: black;
 
-   	--frame-width: 300px;
-
-   	--frame-height: 400px;
-   	--frame-aspect-ratio: 3 / 4;
+       --frame-width: 300px;
+       --frame-height: 400px;
+       --frame-aspect-ratio: 3 / 4;
    }
    ```
 
 3. **Adjust JavaScript**
-   ```bash
+   ```javascript
    const frameWidth = (equal to --frame-width without "px");
    const imagesLenght = (top dot data-index + 1);
    ```
-   ***
-
-   Happy Coding 😎
