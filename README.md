@@ -59,5 +59,7 @@ Assgnment from [The Odin Project](https://www.theodinproject.com)'s lesson [Dyna
 3. **Adjust JavaScript**
    ```javascript
    const frameWidth = (equal to --frame-width without "px");
-   const imagesLenght = (top dot data-index + 1);
+   const imagesLength = (top dot data-index + 1);
    ```
+
+   Happy coding! 😎

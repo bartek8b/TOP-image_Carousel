@@ -1,6 +1,6 @@
 // To be set manually
 const frameWidth = 300;
-const imagesLenght = 5;
+const imagesLength = 5;
 // End of To be set manually
 
 const tape = document.querySelector(".tape");
@@ -22,7 +22,7 @@ function updateDotFill() {
 	});
 }
 function play() {
-	if (currentIndex === imagesLenght - 1) {
+	if (currentIndex === imagesLength - 1) {
 		currentIndex = 0;
 		updateTapePosition();
 		updateDotFill();
@@ -68,7 +68,7 @@ window.addEventListener("click", e => {
 			updateTapePosition();
 			updateDotFill();
 		} else {
-			currentIndex = imagesLenght - 1;
+			currentIndex = imagesLength - 1;
 			updateTapePosition();
 			updateDotFill();
 		}
@@ -76,7 +76,7 @@ window.addEventListener("click", e => {
 	}
 
 	if (nextBtn) {
-		if (currentIndex === imagesLenght - 1) {
+		if (currentIndex === imagesLength - 1) {
 			currentIndex = 0;
 			updateTapePosition();
 			updateDotFill();
