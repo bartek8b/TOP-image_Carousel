@@ -8,8 +8,6 @@ Assgnment from [The Odin Project](https://www.theodinproject.com)'s lesson [Dyna
 
 ### How to adjust
 
-### How to adjust
-
 1. **Adjust HTML**
 
    Set images
