@@ -1,0 +1,107 @@
+body {
+	box-sizing: border-box;
+	background-color: var(--background-color);
+	font-family: Helvetica;
+	justify-content: center;
+	margin: 0;
+	padding: 32px;
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+	justify-content: center;
+	align-items: center;
+}
+/* Adjustable part */
+:root {
+	--main-color: blueviolet;
+	--background-color: lightgrey;
+	--shadow-color: black;
+
+
+	/* needs to be hard entered into js script as const frameWidth */
+	--frame-width: 300px;
+
+	--frame-height: 400px;
+	--frame-aspect-ratio: 3 / 4;
+}
+/* End of Adjustable part */
+.frame-container {
+	display: flex;
+}
+button {
+	aspect-ratio: 1 / 1;
+	border-radius: 99rem;
+	align-self: center;
+	cursor: pointer;
+	background-color: transparent;
+	border: 2px solid var(--main-color);
+	color: whitesmoke;
+	font-size: 1.4rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 1px 1px 2px var(--shadow-color);
+}
+button:active{
+	filter: invert(30%);
+}
+.play-btn,
+.previous-btn,
+.next-btn {
+	width: 48px;
+	background-color: var(--main-color);
+	z-index: 999;
+}
+.previous-btn {
+	position: relative;
+	left: 8px;
+}
+.next-btn {
+	position: relative;
+	right: 8px;
+}
+.previous-btn:hover,
+.next-btn:hover {
+	transform: scaleX(90%);
+}
+.play-btn:hover {
+	transform: scaleY(90%);
+}
+.frame {
+	border: 2px solid var(--main-color);
+	width: var(--frame-width);
+	height: var(--frame-height);
+	overflow: hidden;
+	border-radius: 4px;
+	box-shadow: 1px 1px 2px var(--shadow-color);
+}
+.tape {
+	height: inherit;
+	position: relative;
+	/* right: 0px; <- Set dynamically by .js*/
+	display: flex;
+	transition: right .3s ease-in-out;
+}
+.tape > img {
+	width: var(--frame-width);
+	aspect-ratio: var(--frame-aspect-ratio);
+	align-self: flex-start;
+}
+.dots-box {
+	display: flex;
+	gap: 16px;
+}
+.dot {
+	width: 12px;
+}
+.dot-filled {
+	background-color: var(--main-color);
+}
+a {
+	position: fixed;
+	bottom: 4px;
+	font-size: 0.7rem;
+	text-decoration: none;
+	color: var(--main-color);
+	z-index: -1;
+}
