@@ -46,7 +46,7 @@ function slideShow() {
 function markPlayBtn() {
 	const playBtn = document.querySelector(".play-btn");
 	if (autoPlay) {
-		playBtn.innerHTML = "&#9209;";
+		playBtn.innerHTML = "&#9632;";
 	} else {
 		playBtn.innerHTML = "&#9654;";
 	}

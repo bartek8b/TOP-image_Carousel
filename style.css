@@ -1,6 +1,7 @@
 body {
 	box-sizing: border-box;
 	background-color: var(--background-color);
+	-webkit-tap-highlight-color: transparent;
 	font-family: Helvetica;
 	justify-content: center;
 	margin: 0;
@@ -16,7 +17,6 @@ body {
 	--main-color: blueviolet;
 	--background-color: lightgrey;
 	--shadow-color: black;
-
 
 	/* needs to be hard entered into js script as const frameWidth */
 	--frame-width: 300px;
@@ -42,7 +42,7 @@ button {
 	justify-content: center;
 	box-shadow: 1px 1px 2px var(--shadow-color);
 }
-button:active{
+button:active {
 	filter: invert(30%);
 }
 .play-btn,
@@ -80,7 +80,7 @@ button:active{
 	position: relative;
 	/* right: 0px; <- Set dynamically by .js*/
 	display: flex;
-	transition: right .3s ease-in-out;
+	transition: right 0.3s ease-in-out;
 }
 .tape > img {
 	width: var(--frame-width);
