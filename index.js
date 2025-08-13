@@ -34,8 +34,8 @@ function play() {
 }
 function slideShow() {
 	if (autoPlay) {
-		if (intervalId !== null) return; // Jeśli już działa, nie uruchamiaj kolejnego
-		intervalId = setInterval(play, 3000);
+		if (intervalId !== null) return; // Don't run new interval if one exist
+		intervalId = setInterval(play, 5000);
 	} else {
 		if (intervalId !== null) {
 			clearInterval(intervalId);
