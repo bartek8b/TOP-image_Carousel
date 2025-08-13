@@ -34,7 +34,7 @@ function play() {
 }
 function slideShow() {
 	if (autoPlay) {
-		if (intervalId !== null) return; // Don't run new interval if one exist
+		if (intervalId !== null) return; // Don't run new interval if one exists
 		intervalId = setInterval(play, 5000);
 	} else {
 		if (intervalId !== null) {
@@ -46,7 +46,7 @@ function slideShow() {
 function markPlayBtn() {
 	const playBtn = document.querySelector(".play-btn");
 	if (autoPlay) {
-		playBtn.innerHTML = "&#9632;";
+		playBtn.innerHTML = "&#9208;";
 	} else {
 		playBtn.innerHTML = "&#9654;";
 	}

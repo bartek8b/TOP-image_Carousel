@@ -42,6 +42,9 @@ button {
 	justify-content: center;
 	box-shadow: 1px 1px 2px var(--shadow-color);
 }
+button:hover{
+	transform: scale(95%);
+}
 button:active {
 	filter: invert(30%);
 }
@@ -59,13 +62,6 @@ button:active {
 .next-btn {
 	position: relative;
 	right: 8px;
-}
-.previous-btn:hover,
-.next-btn:hover {
-	transform: scaleX(90%);
-}
-.play-btn:hover {
-	transform: scaleY(90%);
 }
 .frame {
 	border: 2px solid var(--main-color);
@@ -94,6 +90,7 @@ button:active {
 .dot {
 	width: 12px;
 }
+
 .dot-filled {
 	background-color: var(--main-color);
 }
