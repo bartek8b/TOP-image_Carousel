@@ -35,7 +35,7 @@ button {
 	cursor: pointer;
 	background-color: transparent;
 	border: 2px solid var(--main-color);
-	color: whitesmoke;
+	color: hsl(0, 0%, 95%);
 	font-size: 1.4rem;
 	display: flex;
 	align-items: center;
@@ -44,11 +44,11 @@ button {
 	transform: scale(100%);
 	transition: 0.1s ease-in-out;
 }
-button:hover{
+button:active{
 	transform: scale(95%);
 }
-button:active {
-	filter: invert(30%);
+button:hover {
+	color: var(--background-color);
 }
 .play-btn,
 .previous-btn,
