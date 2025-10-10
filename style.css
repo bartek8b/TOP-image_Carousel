@@ -18,9 +18,7 @@ body {
 	--background-color: lightgrey;
 	--shadow-color: black;
 
-	/* needs to be hard entered into js script as const frameWidth */
 	--frame-width: 300px;
-
 	--frame-height: 400px;
 	--frame-aspect-ratio: 3 / 4;
 }
@@ -65,10 +63,12 @@ button:hover {
 	position: relative;
 	right: 8px;
 }
+
+/* Responsive frame */
 .frame {
 	border: 2px solid var(--main-color);
-	width: var(--frame-width);
-	height: var(--frame-height);
+	width: min(var(--frame-width), 45vw);
+	height: min(var(--frame-height), 60vw);
 	overflow: hidden;
 	border-radius: 4px;
 	box-shadow: 1px 1px 2px var(--shadow-color);
@@ -81,7 +81,7 @@ button:hover {
 	transition: right 0.3s ease-in-out;
 }
 .tape > img {
-	width: var(--frame-width);
+	width: min(var(--frame-width), 45vw);
 	aspect-ratio: var(--frame-aspect-ratio);
 	align-self: flex-start;
 }
