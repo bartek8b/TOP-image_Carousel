@@ -1,5 +1,4 @@
 // To be set manually
-const frameWidth = 300;
 const imagesLength = 5;
 // End of To be set manually
 
@@ -11,6 +10,8 @@ let autoPlay = true;
 let intervalId = null;
 
 function updateTapePosition() {
+	const frame = document.querySelector(".frame");
+	const frameWidth = frame.offsetWidth;
 	tape.style.right = `${frameWidth * currentIndex}px`;
 }
 
@@ -158,3 +159,6 @@ updateTapePosition();
 updateDotFill();
 slideShow();
 markPlayBtn();
+
+// Dodaj obsługę zmiany rozmiaru okna
+window.addEventListener("resize", updateTapePosition);

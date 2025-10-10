@@ -2,7 +2,7 @@
 
 Simple image carousel with autoplay made in vanilla HTML, CSS, JavaScript.
 
-Assgnment from [The Odin Project](https://www.theodinproject.com)'s lesson [Dynamic User Interface Interactions](https://www.theodinproject.com/lessons/node-path-javascript-dynamic-user-interface-interactions).
+Assgnment from [The Odin Project](https://www.theodinproject.com)'s lesson [Dynamic User Interface Interactions](https://www.theodinproject.com/lessons/node-path-javascript-dynamic-user-interface-interactions)
 
 ### Live preview: [click!](https://bartek8b.github.io/zzz-image-carousel/)
 
@@ -15,11 +15,11 @@ Assgnment from [The Odin Project](https://www.theodinproject.com)'s lesson [Dyna
    ```html
    <div class="tape">
        <!-- To be hardcoded -->
-       <img src="" alt="">
-       <img src="" alt="">
-       <img src="" alt="">
-       <img src="" alt="">
-       <img src="" alt="">
+       <img src="" alt="" loading="lazy">
+       <img src="" alt="" loading="lazy">
+       <img src="" alt="" loading="lazy">
+       <img src="" alt="" loading="lazy">
+       <img src="" alt="" loading="lazy">
        <!-- End of To be hardcoded -->
    </div>
    ```
@@ -55,9 +55,7 @@ Assgnment from [The Odin Project](https://www.theodinproject.com)'s lesson [Dyna
    ```
 
 3. **Adjust JavaScript**
-   ```javascript
-   const frameWidth = (equal to --frame-width without "px");
-   const imagesLength = (top dot data-index + 1);
-   ```
+
+   - Set `const imagesLength` at the top of the JS file to match the number of images/dots.
 
    Happy coding! 😎
