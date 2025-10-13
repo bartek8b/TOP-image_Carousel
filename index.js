@@ -1,4 +1,5 @@
 // To be set manually
+const frameWidth = 300;
 const imagesLength = 5;
 // End of To be set manually
 
@@ -10,8 +11,6 @@ let autoPlay = true;
 let intervalId = null;
 
 function updateTapePosition() {
-	const frame = document.querySelector(".frame");
-	const frameWidth = frame.offsetWidth;
 	tape.style.right = `${frameWidth * currentIndex}px`;
 }
 
@@ -22,17 +21,17 @@ function updateDotFill() {
 			: d.classList.remove("dot-filled");
 	});
 }
-
 function play() {
 	if (currentIndex === imagesLength - 1) {
 		currentIndex = 0;
+		updateTapePosition();
+		updateDotFill();
 	} else {
 		currentIndex = currentIndex + 1;
+		updateTapePosition();
+		updateDotFill();
 	}
-	updateTapePosition();
-	updateDotFill();
 }
-
 function slideShow() {
 	if (autoPlay) {
 		if (intervalId !== null) return; // Don't run new interval if one exists
@@ -44,17 +43,6 @@ function slideShow() {
 		}
 	}
 }
-
-function restartSlideShow() {
-	if (intervalId !== null) {
-		clearInterval(intervalId);
-		intervalId = null;
-	}
-	if (autoPlay) {
-		intervalId = setInterval(play, 5000);
-	}
-}
-
 function markPlayBtn() {
 	const playBtn = document.querySelector(".play-btn");
 	if (autoPlay) {
@@ -77,24 +65,26 @@ window.addEventListener("click", e => {
 	if (prevBtn) {
 		if (currentIndex !== 0 && currentIndex > 0) {
 			currentIndex = currentIndex - 1;
+			updateTapePosition();
+			updateDotFill();
 		} else {
 			currentIndex = imagesLength - 1;
+			updateTapePosition();
+			updateDotFill();
 		}
-		updateTapePosition();
-		updateDotFill();
-		restartSlideShow();
 		return;
 	}
 
 	if (nextBtn) {
 		if (currentIndex === imagesLength - 1) {
 			currentIndex = 0;
+			updateTapePosition();
+			updateDotFill();
 		} else {
 			currentIndex = currentIndex + 1;
+			updateTapePosition();
+			updateDotFill();
 		}
-		updateTapePosition();
-		updateDotFill();
-		restartSlideShow();
 		return;
 	}
 
@@ -102,19 +92,17 @@ window.addEventListener("click", e => {
 		currentIndex = Number(dotBtn.dataset.index);
 		updateTapePosition();
 		updateDotFill();
-		restartSlideShow();
 		return;
 	}
 
 	if (playPauseBtn) {
-		autoPlay = !autoPlay;
+		autoPlay ? (autoPlay = false) : (autoPlay = true);
 		slideShow();
 		markPlayBtn();
-		restartSlideShow(); 
 	}
 });
 
-// swipe gestures handling
+//swipe gestures handling
 
 let touchStartX = null;
 let touchEndX = null;
@@ -146,16 +134,18 @@ frame.addEventListener("touchend", function (e) {
 	if (touchStartX !== null && touchEndX !== null) {
 		const deltaX = touchEndX - touchStartX;
 		if (Math.abs(deltaX) > 50) {
-			if (deltaX < 0 && currentIndex < imagesLength - 1) {
-				currentIndex++;
-				updateTapePosition();
-				updateDotFill();
-				restartSlideShow(); // Dodane: reset licznika po swipe w prawo
-			} else if (deltaX > 0 && currentIndex > 0) {
-				currentIndex--;
-				updateTapePosition();
-				updateDotFill();
-				restartSlideShow(); // Dodane: reset licznika po swipe w lewo
+			if (deltaX < 0) {
+				if (currentIndex < imagesLength - 1) {
+					currentIndex++;
+					updateTapePosition();
+					updateDotFill();
+				}
+			} else {
+				if (currentIndex > 0) {
+					currentIndex--;
+					updateTapePosition();
+					updateDotFill();
+				}
 			}
 		}
 	}
@@ -163,12 +153,8 @@ frame.addEventListener("touchend", function (e) {
 	touchEndX = null;
 });
 
-window.addEventListener("resize", updateTapePosition);
-
 // init
 updateTapePosition();
 updateDotFill();
 slideShow();
 markPlayBtn();
-
-
